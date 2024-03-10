@@ -1,8 +1,9 @@
 <script lang="ts">
 	import Label from '$lib/components/ui/label/label.svelte';
-	import Card from './Card.svelte';
+	import Card from '$lib/timeline/Card.svelte';
+	import type { ArticleType } from '$lib/timeline/types';
 	export let date: string;
-	export let cardList: { imgSrc: string; alt: string; postDescription: string }[] = [];
+	export let articles: ArticleType[] = [];
 </script>
 
 <div class="flex justify-center">
@@ -20,8 +21,8 @@
 			/>
 		</div>
 		<div class="flex w-[764px] ml-[40px] justify-between">
-			{#each cardList as item}
-				<Card imgSrc={item.imgSrc} alt={item.alt} postDescription={item.postDescription} />
+			{#each articles as item}
+				<Card imgSrc={item.imgSrc} alt="article image" postDescription={item.postDescription} />
 			{/each}
 		</div>
 	</div>

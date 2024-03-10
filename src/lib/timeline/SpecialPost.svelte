@@ -1,15 +1,8 @@
 <script lang="ts">
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import * as Alert from '$lib/components/ui/alert/index.js';
-	export let position: {
-		brandLogoSrc?: string;
-		fallbackName?: string;
-		brandName?: string;
-		location?: string;
-		date?: string;
-		position?: string;
-		jobType?: string;
-	};
+	import type { PositionType } from '$lib/timeline/types';
+	export let position: PositionType;
 </script>
 
 <div class="flex justify-center">
@@ -20,7 +13,7 @@
 			<div class="flex flex-col items-end mr-[40px]">
 				<Avatar.Root class="h-12 w-12">
 					<Avatar.Image src={position.brandLogoSrc} alt="brand logo" />
-					<Avatar.Fallback>{position.fallbackName}</Avatar.Fallback>
+					<Avatar.Fallback>{position.fallbackBrandInitials}</Avatar.Fallback>
 				</Avatar.Root>
 				<div class="text-base font-bold text-black">{position.brandName}</div>
 				<div class="text-xs text-[#7A9299] font-norma text-right">

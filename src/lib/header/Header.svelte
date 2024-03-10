@@ -1,6 +1,6 @@
 <script>
-	import MainNav from './MainNav.svelte';
-	import UserNav from './UserNav.svelte';
+	import MainNav from '$lib/header/MainNav.svelte';
+	import UserNav from '$lib/header/UserNav.svelte';
 </script>
 
 <div class="border-dotted border-b">
